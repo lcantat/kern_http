@@ -48,20 +48,7 @@ Request       = Request-Line              ; Section 5.1
 /* For optimisation purpose, we consider that line are completed*/                
 size_t http_parser_recvdata(http_parser * parser,const char * buffer,size_t length)
 {
-    const char *p   = buffer;
-    const char *end = buffer+length;
     return 0;
-    while (p != end)
-    {
-        switch (parser->state)
-        {
-            /* Looking for Request-Line */
-            case s_http_open : 
-            {
-                while (p != end);
-            }
-        }
-    }
 }
 
 

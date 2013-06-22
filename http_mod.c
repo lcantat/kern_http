@@ -16,13 +16,13 @@
 
 static int __init init_http(void)
 {
-	printk(KERN_INFO "HTTP module init \n");
+	http_debug(KERN_INFO "HTTP module init \n");
 	return http_engine_start();
 }
 
 static void __exit cleanup_http(void)
 {
-	printk(KERN_INFO "HTTP module cleanup \n");
+	http_debug(KERN_INFO "HTTP module cleanup \n");
 	http_engine_stop();
 }
 
