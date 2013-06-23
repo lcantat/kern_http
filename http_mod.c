@@ -17,13 +17,18 @@
 static int __init init_http(void)
 {
 	http_debug(KERN_INFO "HTTP module init \n");
-	return http_engine_start();
+	// TODO : use kernel argument for initialisation.
+	// TODO : add proc entry to handle management of the module from userland.
+	tcp_engine_start();
+	// http_engine_start();
+	return 0;
 }
 
 static void __exit cleanup_http(void)
 {
 	http_debug(KERN_INFO "HTTP module cleanup \n");
-	http_engine_stop();
+	// http_engine_stop();
+    tcp_engine_stop();
 }
 
 

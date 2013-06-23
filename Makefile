@@ -5,7 +5,7 @@
 
 obj-$(CONFIG_HTTP) += http.o
 
-http-y	:=  http_mod.o http_parser.o http_engine.o
+http-y	:=  http_mod.o http_parser.o http_engine.o tcp_engine.o
 			
 
 all:
