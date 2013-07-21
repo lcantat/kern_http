@@ -31,7 +31,8 @@ int tcp_receive_data(struct socket * sk,char * buffer,int    length)
 	msg.msg_iovlen = 1;
 	msg.msg_control = NULL;
 	msg.msg_controllen = 0;
-
+    msg.msg_flags = MSG_DONTWAIT;
+ 
 	ret = sock_recvmsg(sk, &msg, length, 0);
 
     buffer[ret] = 0;
@@ -76,8 +77,10 @@ int http_build_reply(char * out_buffer,char * in_buffer,int max_length)
 {
     int len;
     int msg_len = strlen(html_content);
-    printk("Compute html content %d octets\n",(int)strlen(html_content));
+    
     len = sprintf(out_buffer,"%s%d\n\n%s",html_header,msg_len,html_content);
+    printk("Compute html content %d octets total size = %d \n",(int)strlen(html_content),len);
+    
     return len;
 }
 

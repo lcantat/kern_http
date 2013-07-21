@@ -18,5 +18,5 @@ echo "loading of module into kernem"
 ssh $USER_NAME@$TARGET_IP "rmmod $MODULE_NAME;insmod $MODULE_NAME.ko"
 
 echo "basic module testing"
-wget -O tmp.html http://$TARGET_IP:9090/  
+#wget -O tmp.html http://$TARGET_IP:9090/  
 rm tmp.html
